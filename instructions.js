@@ -29,8 +29,8 @@ Acorn: http://marijnhaverbeke.nl/acorn/
 1) Look at Esprima and Acorn. They both have similar APIs and produce identical
 (or near-identical) output (an Abstract Syntax Tree of the JavaScript code). With
 that being said you should make a decision to choose one of them. You'll probably
- want to look at performance, file size, API quality, and documentation. Provide
- justification for why you made your decision.
+want to look at performance, file size, API quality, and documentation. Provide
+justification for why you made your decision.
 
 2) We want to support modern versions of Firefox, Chrome, and Safari and IE 10+.
 With that in mind follow the next steps and make sure whichever parsing tool you
