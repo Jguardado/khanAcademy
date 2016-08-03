@@ -1,6 +1,3 @@
-var path = require('path');
-var webpack = require('webpack');
-
 module.exports = {
   //entry point for bundling
   entry: [
@@ -9,7 +6,7 @@ module.exports = {
 
   //the output path and filename
   output: {
-    path: path.join(__dirname, 'public', 'build'),
+    path: __dirname,
     filename: 'bundle.js',
   },
 
@@ -17,13 +14,21 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
+        test: [/\.js$/, /\.es6/],
+        exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'react'],
         },
-        exclude: '/node_modules',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
       },
     ],
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx'],
+  },
+  watch: true,
 };
